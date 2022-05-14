@@ -1,0 +1,60 @@
+﻿@page
+@model POS.Pages.POS_page.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PosTask</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PosTask.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PosTask.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PosTask.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PosTask.Date)
+        </dd>
+       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PosTask.TotalCharges)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PosTask.TotalCharges)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PosTask.MoniePointCharges)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PosTask.MoniePointCharges)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PosTask.CityCharges)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PosTask.CityCharges)
+        </dd>
+       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PosTask.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PosTask.User.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="PosTask.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

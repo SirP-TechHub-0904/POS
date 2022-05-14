@@ -1,0 +1,46 @@
+﻿@page
+@model POS.Pages.POS_page.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Pos Task</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="PosTask.Date" class="control-label"></label>
+                <input asp-for="PosTask.Date" class="form-control" value="@DateTime.UtcNow"/>
+                <span asp-validation-for="PosTask.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosTask.AmountInMachineBefore" class="control-label"></label>
+                <input asp-for="PosTask.AmountInMachineBefore" class="form-control" />
+                <span asp-validation-for="PosTask.AmountInMachineBefore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosTask.AmountInCashBefore" class="control-label"></label>
+                <input asp-for="PosTask.AmountInCashBefore" class="form-control" />
+                <span asp-validation-for="PosTask.AmountInCashBefore" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,112 @@
+﻿@page
+@model POS.Pages.POS_page.StatisticsModel
+
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+<h1>Statistics on Active Task</h1>
+
+<div class="table-responsive">
+    <table id="example" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PosTask[0].Title)
+                </th>
+
+                <th>
+                    Machine Before
+                </th>
+                <th>
+                    Cash Before
+                </th>
+                <th>
+                    Machine After
+                </th>
+                <th>
+                    Cash After
+                </th>
+                <th>
+                    Total Charges
+                </th>
+                <th>
+                    Monie Point Charges
+                </th>
+                <th>
+                    City Balance
+                </th>
+                <th>
+                    Expenses
+                </th>
+                <th>
+                    Admin
+                </th>
+                <th>
+                    Reception
+                </th>
+                <th>
+                    Machine
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PosTask[0].Close)
+                </th>
+
+            </tr>
+        </thead>
+        @{ int sn = 0;}
+        <tbody>
+            @foreach (var item in Model.PosTask)
+            {
+            <tr>
+                <td>
+                    @{ sn++;}
+                    @sn
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountInMachineBefore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountInCashBefore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountInMachineAfter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountInCashAfter)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCharges)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoniePointCharges)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityCharges)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Expenditure.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Admin_Pay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rep_Pay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Machine_Pay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Close)
+                </td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

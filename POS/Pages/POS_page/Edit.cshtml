@@ -1,0 +1,58 @@
+﻿@page
+@model POS.Pages.POS_page.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PosTask</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PosTask.Id" />
+            <input type="hidden" asp-for="PosTask.UserId" />
+            <div class="form-group">
+                <label asp-for="PosTask.Title" class="control-label"></label>
+                <input asp-for="PosTask.Title" class="form-control" />
+                <span asp-validation-for="PosTask.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosTask.Date" class="control-label"></label>
+                <input asp-for="PosTask.Date" class="form-control" />
+                <span asp-validation-for="PosTask.Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PosTask.TotalCharges" class="control-label"></label>
+                <input asp-for="PosTask.TotalCharges" class="form-control" />
+                <span asp-validation-for="PosTask.TotalCharges" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosTask.MoniePointCharges" class="control-label"></label>
+                <input asp-for="PosTask.MoniePointCharges" class="form-control" />
+                <span asp-validation-for="PosTask.MoniePointCharges" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PosTask.CityCharges" class="control-label"></label>
+                <input asp-for="PosTask.CityCharges" class="form-control" />
+                <span asp-validation-for="PosTask.CityCharges" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
